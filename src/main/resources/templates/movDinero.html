@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Monto Movimiento</th>
+        <th>Concepto Moviminto</th>
+        <th>Fecha de Creacion</th>
+        <th>Fecha de Actualizacion</th>
+        <th>Empresa</th>
+        <th>Empleado</th>
+    </tr>
+    <tr th:each="movDinero: ${movDineros}">
+        <td th:text="${movDinero.id}"></td>
+        <td th:text="${movDinero.montoMovimiento}"></td>
+        <td th:text="${movDinero.conceptoMovimiento}"></td>
+        <td th:text="${movDinero.fechaCreacion}"></td>
+        <td th:text="${movDinero.fechaActualizacion}"></td>
+        <td th:text="${movDinero.empresa.nombre}"></td>
+        <td th:text="${movDinero.empleado.nombre}"></td>
+        <td><a th:href="@{/movDinero/editar/{id} (id = ${movDinero.id})}">Editar</a></td>
+        <td><a th:href="@{/movDinero/borrar/{id} (id = ${movDinero.id})}">Borrar</a></td>
+    </tr>
+</table>
+<a href="/agregar-movDinero">Agregar un nuevo movimiento de dinero</a>
+
+</body>
+</html>
