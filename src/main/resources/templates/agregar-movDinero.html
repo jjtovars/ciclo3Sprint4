@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,8 +13,14 @@
         <label for="montoMovimiento">Monto Movimiento</label>
         <input type="text" id="montoMovimiento" th:field="${movDinero.montoMovimiento}">
 
+        <!--<label for="conceptoMovimiento">Concepto Movimiento</label>
+        <input type="text" id="conceptoMovimiento" th:field="${movDinero.conceptoMovimiento}">-->
+
         <label for="conceptoMovimiento">Concepto Movimiento</label>
-        <input type="text" id="conceptoMovimiento" th:field="${movDinero.conceptoMovimiento}">
+        <select name="conceptoMovimiento" id="conceptoMovimiento" th:field="${movDinero.conceptoMovimiento}">
+            <option value="Ingreso">Ingreso</option>
+            <option value="Egreso">Egreso</option>
+        </select>
 
         <label for="empresa">Empresa ID</label>
         <input type="text" id="empresa" th:field="${movDinero.empresa.id}">
@@ -24,5 +30,6 @@
 
         <input type="submit" value="Agregar Movimiento de Dinero">
     </form>
+    <a th:href="@{'/'}">Pagina principal</a>
 </body>
 </html>

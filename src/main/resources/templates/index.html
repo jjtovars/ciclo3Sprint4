@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="../static/css/styles.css">
     <title>Index</title>
 </head>
-<body class="contenedor-imagen-background">
-<section class="contenedor-principal">
-    <section class="contenedor-login">
-
-        <figure>
-            <img src="https://lms.misiontic2022udea.com/pluginfile.php/1/core_admin/logo/0x200/1654218085/ingenia.png" alt="">
-        </figure>
-
-        <form action="" class="contenedor-formulario">
-            <input type="text" placeholder="Nombre de Usuario">
-            <input type="password" placeholder="Contraseña">
-            <button type="submit">ACCEDER</button>
-        </form>
-
-    </section>
-</section>
+<body>
+    <header class="header_container" id="header_id">
+        <div class="titulo_logo">
+            <h1 class="titulo_principal">ZuAn JC Clothing</h1>
+            <div class="logo"></div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a th:href="@{empresa}">EMPRESA</a></li>
+                <li><a th:href="@{empleado}">EMPLEADO</a></li>
+                <li><a th:href="@{movDinero}">MOVIMIENTO DE DINERO</a></li>
+            </ul>
+        </nav>
+    </header>
 </body>
 </html>
